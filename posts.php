@@ -1,5 +1,6 @@
-<?php include('head.php') ?>
+
 <?php include('images_function.php') ?>
+<?php include('head.php'); ?>
 <title>Upload</title>
 <div class="container">
 	<div class="row">
@@ -68,11 +69,12 @@
 
 	</div>
 </div>
-
-
+<!-- JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- CKEditor -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.8.0/ckeditor.js"></script>
-
 <script src="scripts.js"></script>
 
 </body>

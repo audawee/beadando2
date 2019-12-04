@@ -1,8 +1,10 @@
+
 <?php
 
 //fetch_comment.php
 
-$connect = new PDO('mysql:host=localhost;dbname=beadando', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=beadando', 'root', '');
+
 
 $query = "
 SELECT * FROM comments
@@ -10,7 +12,7 @@ WHERE parent_comment_id = '0'
 ORDER BY comment_id DESC
 ";
 
-$statement = $connect->prepare($query);
+$statement = $db->prepare($query);
 
 $statement->execute();
 
@@ -25,18 +27,18 @@ foreach($result as $row)
   <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">Reply</button></div>
  </div>
  ';
- $output .= get_reply_comment($connect, $row["comment_id"]);
+ $output .= get_reply_comment($db, $row["comment_id"]);
 }
 
 echo $output;
 
-function get_reply_comment($connect, $parent_id = 0, $marginleft = 0)
+function get_reply_comment($db, $parent_id = 0, $marginleft = 0)
 {
  $query = "
  SELECT * FROM comments WHERE parent_comment_id = '".$parent_id."'
  ";
  $output = '';
- $statement = $connect->prepare($query);
+ $statement = $db->prepare($query);
  $statement->execute();
  $result = $statement->fetchAll();
  $count = $statement->rowCount();
@@ -59,7 +61,7 @@ function get_reply_comment($connect, $parent_id = 0, $marginleft = 0)
     <div class="panel-footer" align="right"><button type="button" class="btn btn-default reply" id="'.$row["comment_id"].'">Reply</button></div>
    </div>
    ';
-   $output .= get_reply_comment($connect, $row["comment_id"], $marginleft);
+   $output .= get_reply_comment($db, $row["comment_id"], $marginleft);
   }
  }
  return $output;

@@ -1,8 +1,10 @@
+
 <?php
 
 //add_comment.php
 
-$connect = new PDO('mysql:host=localhost;dbname=beadando', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=beadando', 'root', '');
+
 
 $error = '';
 $comment_name = '';
@@ -33,7 +35,7 @@ if($error == '')
  (parent_comment_id, comment, comment_sender_name) 
  VALUES (:parent_comment_id, :comment, :comment_sender_name)
  ";
- $statement = $connect->prepare($query);
+ $statement = $db->prepare($query);
  $statement->execute(
   array(
    ':parent_comment_id' => $_POST["comment_id"],

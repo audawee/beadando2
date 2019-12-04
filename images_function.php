@@ -14,7 +14,7 @@ if (isset($_POST['uploading_file'])) {
   	$target = "images/" . basename($image);
 
   	if (move_uploaded_file($_FILES['post_image']['tmp_name'], $target)) {
-  		echo "http://localhost/beadando/" . $target;
+  		echo "http://localhost/" . $target;
   		exit();
   	}else{
   		echo "Failed to upload image";

@@ -1,6 +1,5 @@
+<?php include('config.php') ?>
 <?php 
-	// connect to database
-    $db = mysqli_connect("localhost", "root", "", "beadando");
 
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
