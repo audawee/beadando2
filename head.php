@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	
-    
+    <meta charset="UTF-8">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="scripts.js"></script>

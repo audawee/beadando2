@@ -1,13 +1,12 @@
+<?php require_once('config.php') ?>
 <?php
-session_start();
 
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array(); 
 
-// connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'beadando');
+
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
